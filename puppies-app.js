@@ -35,6 +35,15 @@ export default class App extends Component {
       console.log(puppyObj);
        
       this.setState({puppies: this.state.puppies.concat([puppyObj])})
+        
+      axios.post('https://express-api-boristotle.c9users.io/addpuppy', {
+          puppy: {
+              name: 'Bob',
+              breed: 'Husky',
+              adjective: 'Hairy'
+          }
+      })
+        
       document.getElementById('puppyForm').reset()
        
     }
